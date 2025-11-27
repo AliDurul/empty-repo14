@@ -1,0 +1,99 @@
+import Link from 'next/link'
+import React from 'react'
+import { FiSearch, FiHeart, FiShoppingCart, FiUser } from 'react-icons/fi'
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
+import { Badge } from './ui/badge'
+import SearchInput from './SearchInput'
+import { Categories } from './Categories'
+import { Separator } from './ui/separator'
+
+export default function Header() {
+    return (
+        <>
+            {/* Top Strip */}
+            <div className='hidden md:flex flex-col sm:flex-row justify-between items-center px-4 py-3 text-[12px] bg-gray-100 font-mont border-b border-gray-200 text-gray-400'>
+                <div>
+                    <p>Get up to 50% off new season styles, limited time only</p>
+                </div>
+                <ul className='flex space-x-4'>
+                    <li>
+                        <Link href="#">Help Center</Link>
+                    </li>
+                    <li>
+                        <Link href="#">Order Tracking</Link>
+                    </li>
+                </ul>
+            </div>
+
+            {/* Main Header - Sticky */}
+            <header className='sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm'>
+                <div className='container mx-auto px-4 py-4'>
+                    <div className='flex items-center justify-between gap-8'>
+                        {/* Logo */}
+                        <Link href="/" className='text-2xl font-bold text-gray-900 whitespace-nowrap'>
+                            ShopLy
+                        </Link>
+
+                        {/* Search Bar */}
+                        <SearchInput />
+
+                        {/* Right Side Actions */}
+                        <div className='flex items-center gap-6'>
+                            {/* Login/Register */}
+                            <Link href="/login" className='hidden sm:flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors'>
+                                <FiUser size={22} />
+                                <span className='text-sm font-medium'>Login / Register</span>
+                            </Link>
+
+                            {/* Favorites */}
+                            <Link href="/favorites" className='relative  '>
+                                <Tooltip>
+                                    <TooltipTrigger asChild>
+                                        <FiHeart size={22} className="text-gray-700 hover:text-red-500 transition-colors cursor-pointer" />
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                        <p>Favorites</p>
+                                    </TooltipContent>
+                                </Tooltip>
+                                <Badge variant={'destructive'} className="absolute -top-2 -right-2 h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">
+                                    8
+                                </Badge>
+                            </Link>
+
+                            {/* Shopping Cart */}
+                            <Link href="/cart" className='relative  '>
+                                <Tooltip>
+                                    <TooltipTrigger asChild>
+                                        <FiShoppingCart size={22} className="text-gray-700 hover:text-red-500 transition-colors cursor-pointer" />
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                        <p>Shopping Cart</p>
+                                    </TooltipContent>
+                                </Tooltip>
+                                <Badge className="absolute -top-2 -right-2 h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">
+                                    8
+                                </Badge>
+                            </Link>
+
+
+                        </div>
+                    </div>
+
+                    {/* Mobile Search */}
+                    <div className='md:hidden mt-4'>
+                        <div className='relative w-full'>
+                            <input
+                                type="text"
+                                placeholder="Search for products..."
+                                className='w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent'
+                            />
+                            <FiSearch className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400' size={20} />
+                        </div>
+                    </div>
+                </div>
+                <Separator />
+                <Categories />
+            </header>
+        </>
+    )
+}
