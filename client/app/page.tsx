@@ -1,6 +1,7 @@
 import { PromotionCarausel } from '@/components/PromotionCarausel'
 import Hero from '@/components/Hero'
 import FeatureStrip from '@/components/FeatureStrip'
+import { CartProvider } from '@/components/cart/CartContext'
 import ProductCarausel from '@/components/ProductCarausel'
 // Removed unused Card, Button, Image imports after refactor
 import { LiaShippingFastSolid } from "react-icons/lia";
@@ -162,67 +163,66 @@ export default function Home() {
     }
   ];
   return (
-    <main>
+    <CartProvider>
+    <main className="space-y-14 ">
       <Hero />
-      <div className="space-y-14">
-        <ProductCarausel
-          title="Popular Products"
-          subTitle="Do not miss the current offers until the end of March."
-          categories={popularCategories}
-          products={popularProducts}
-        />
 
-        <PromotionCarausel />
+      <ProductCarausel
+        title="Popular Products"
+        subTitle="Do not miss the current offers until the end of March."
+        categories={popularCategories}
+        products={popularProducts}
+      />
 
-        {/* <section className='bg-background p-5 max-w-5/6 mx-auto border border-primary/20 rounded-lg flex flex-col md:flex-row justify-around items-center gap-2 shadow-md shadow-primary/10'>
-          <div className='flex justify-center items-center'>
-            <LiaShippingFastSolid className="mr-4 size-8" />
-            <p className='uppercase font-medium '>Free shipping</p>
-          </div>
-          <p className='text-muted-foreground'>Free Delivery now On Your First Order and over $200</p>
-          <p className='font-bold'>- Only $200</p>
-        </section> */}
+      <PromotionCarausel />
 
-        <FeatureStrip />
+      <FeatureStrip />
 
+      <ProductCarausel
+        title="Latest Products"
+        products={latestProducts}
+      />
 
+      <section className='bg-background p-5 max-w-5/6 mx-auto border border-secondary/90 rounded-lg flex flex-col md:flex-row justify-around items-center gap-2 shadow-md shadow-secondary/50'>
+        <div className='flex justify-center items-center'>
+          <LiaShippingFastSolid className="mr-4 size-8" />
+          <p className='uppercase font-medium '>Free shipping</p>
+        </div>
+        <p className='text-muted-foreground'>Free Delivery now On Your First Order and over $200</p>
+        <p className='font-bold'>- Only $200</p>
+      </section>
 
-        <ProductCarausel
-          title="Latest Products"
-          products={latestProducts}
-        />
+      <ProductCarausel
+        title="featured Products"
+        products={featuredProducts}
+      />
 
-        <ProductCarausel
-          title="featured Products"
-          products={featuredProducts}
-        />
+      <PromotionDiv type="mid" promotions={promotionsS} />
 
-        <PromotionDiv type="mid" promotions={promotionsS} />
+      <ProductCarausel
+        title="Tech Products"
+        products={tech}
+      />
 
-        <ProductCarausel
-          title="Tech Products"
-          products={tech}
-        />
+      <ProductCarausel
+        title="Mens Products"
+        products={mens}
+      />
 
-        <ProductCarausel
-          title="Mens Products"
-          products={mens}
-        />
-
-        <PromotionDiv type="mix" promotions={promotionsF} />
+      <PromotionDiv type="mix" promotions={promotionsF} />
 
 
-        <ProductCarausel
-          title="Women Products"
-          products={women}
-        />
+      <ProductCarausel
+        title="Women Products"
+        products={women}
+      />
 
-        <Newsletter />
+      <Newsletter />
 
 
-
-      </div>
 
     </main>
+    </CartProvider>
+
   )
 }

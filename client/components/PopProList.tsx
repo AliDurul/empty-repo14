@@ -14,7 +14,8 @@ import { LuHeart, LuExpand } from "react-icons/lu";
 
 
 
-export default function PopProList({products}: {products: unknown[]}) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function PopProList({products}: {products: any[]}) {
     return (
         <Carousel
             className="w-full min-w-0 "

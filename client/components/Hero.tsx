@@ -5,16 +5,10 @@ import Link from 'next/link'
 
 export default function Hero() {
     return (
-        <div className='bg-[#f5f0f0] p-2 space-y-3 md:space-y-6'>
+        <div className='bg-[#f5f0f0] py-3 p-2 space-y-3 md:space-y-6'>
             <HeaderCarousel />
-            
-            <div
-                className="relative overflow-hidden rounded-xl text-white px-6 py-4 sm:px-10 sm:py-6 shadow-lg"
-                style={{
-                    backgroundColor: '#aa4b6b', // fallback
-                    backgroundImage: 'linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b)', // standard
-                }}
-            >
+
+            <div className="relative overflow-hidden rounded-xl text-white px-6 py-4 sm:px-10 sm:py-6 shadow-lg bg-linear-to-r from-primary/90  to-secondary ">
                 <div className="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
                 <div className="absolute -bottom-12 -right-12 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
 
@@ -35,7 +29,7 @@ export default function Hero() {
                             <Button className='bg-white text-gray-900 hover:bg-white/90'>Shop Now</Button>
                         </Link>
                         <Link href='/sale'>
-                            <Button variant='secondary' className='border-white text-black hover:bg-white/90'>View Deals</Button>
+                            <Button variant='outline' className='border-white text-black hover:bg-white/90'>View Deals</Button>
                         </Link>
                     </div>
                 </div>

@@ -8,11 +8,11 @@ import { cn } from '@/lib/utils';
 
 export default function PopProLinks({ categories }: { categories?: string[] }) {
     const { updateUrlParams, getParam } = useUrlParams();
-    const selectedCategory = getParam('pp');
+    const selectedCategory = getParam('pp', 'fashion');
 
     return (
         <Carousel
-            className="w-full flex-1 min-w-0 flex items-center"
+            className="  min-w-0 flex items-center "
             opts={{ align: 'start', dragFree: true, loop: false }}
         >
             <CarouselContent className="ml-1">
@@ -30,7 +30,7 @@ export default function PopProLinks({ categories }: { categories?: string[] }) {
                 ))}
             </CarouselContent>
             <CarouselPrevious className='-left-1' size={'icon-sm'} />
-            <CarouselNext className='-right-6 xl:right-0' size={'icon-sm'} />
+            <CarouselNext className='-right-6 xl:-right-3' size={'icon-sm'} />
         </Carousel>
     )
 }

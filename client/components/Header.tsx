@@ -6,6 +6,7 @@ import { Badge } from './ui/badge'
 import SearchInput from './SearchInput'
 import { Categories } from './Categories'
 import { Separator } from './ui/separator'
+import { Basket } from './Basket'
 
 export default function Header() {
     return (
@@ -60,20 +61,7 @@ export default function Header() {
                                 </Badge>
                             </Link>
 
-                            {/* Shopping Cart */}
-                            <Link href="/cart" className='relative  '>
-                                <Tooltip>
-                                    <TooltipTrigger asChild>
-                                        <FiShoppingCart size={22} className="text-gray-700 hover:text-red-500 transition-colors cursor-pointer" />
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                        <p>Shopping Cart</p>
-                                    </TooltipContent>
-                                </Tooltip>
-                                <Badge className="absolute -top-2 -right-2 h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">
-                                    8
-                                </Badge>
-                            </Link>
+                            <Basket />
 
 
                         </div>
