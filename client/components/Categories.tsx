@@ -79,163 +79,164 @@ const sportsCategories = [
 
 export function Categories() {
     const isMobile = useIsMobile();
-    console.log(isMobile);
 
     return (
-        <NavigationMenu className="max-w-full py-3" viewport={isMobile}>
-            <NavigationMenuList className="flex-wrap">
+        <nav>
+            <NavigationMenu className="max-w-full py-3" viewport={isMobile}>
+                <NavigationMenuList className="flex-wrap">
 
-                {/* Home */}
-                <NavigationMenuItem>
-                    <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                        <Link href="/" className="flex items-center">
-                            Home
-                        </Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
+                    {/* Home */}
+                    <NavigationMenuItem>
+                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                            <Link href="/" className="flex items-center">
+                                Home
+                            </Link>
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
 
-                {/* Men's Fashion */}
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger className="hover:text-red-400 data-[state=open]:text-red-500 transition-colors">
-                        <Shirt className="mr-2 h-4 w-4" />
-                        Men
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid gap-3 p-4 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                            {mensCategories.map((category) => (
-                                <ListItem
-                                    key={category.title}
-                                    title={category.title}
-                                    href={category.href}
-                                >
-                                    {category.description}
-                                </ListItem>
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                    {/* Men's Fashion */}
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger className="hover:text-primary data-[state=open]:text-primary transition-colors">
+                            <Shirt className="mr-2 h-4 w-4" />
+                            Men
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <ul className="grid gap-3 p-4 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                                {mensCategories.map((category) => (
+                                    <ListItem
+                                        key={category.title}
+                                        title={category.title}
+                                        href={category.href}
+                                    >
+                                        {category.description}
+                                    </ListItem>
+                                ))}
+                            </ul>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
 
-                {/* Women's Fashion */}
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger className="hover:text-red-400 data-[state=open]:text-red-500 transition-colors">
-                        <Gem className="mr-2 h-4 w-4" />
-                        Women
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid gap-3 p-4 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                            {womensCategories.map((category) => (
-                                <ListItem
-                                    key={category.title}
-                                    title={category.title}
-                                    href={category.href}
-                                >
-                                    {category.description}
-                                </ListItem>
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                    {/* Women's Fashion */}
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger className="hover:text-primary data-[state=open]:text-primary transition-colors">
+                            <Gem className="mr-2 h-4 w-4" />
+                            Women
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <ul className="grid gap-3 p-4 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                                {womensCategories.map((category) => (
+                                    <ListItem
+                                        key={category.title}
+                                        title={category.title}
+                                        href={category.href}
+                                    >
+                                        {category.description}
+                                    </ListItem>
+                                ))}
+                            </ul>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
 
-                {/* Kids */}
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger className="hover:text-red-400 data-[state=open]:text-red-500 transition-colors">Kids</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid gap-3 p-4 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[550px]">
-                            {kidsCategories.map((category) => (
-                                <ListItem
-                                    key={category.title}
-                                    title={category.title}
-                                    href={category.href}
-                                >
-                                    {category.description}
-                                </ListItem>
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                    {/* Kids */}
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger className="hover:text-primary data-[state=open]:text-primary transition-colors">Kids</NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <ul className="grid gap-3 p-4 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[550px]">
+                                {kidsCategories.map((category) => (
+                                    <ListItem
+                                        key={category.title}
+                                        title={category.title}
+                                        href={category.href}
+                                    >
+                                        {category.description}
+                                    </ListItem>
+                                ))}
+                            </ul>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
 
-                {/* Electronics */}
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger className="hover:text-red-400 data-[state=open]:text-red-500 transition-colors">
-                        <Smartphone className="mr-2 h-4 w-4" />
-                        Electronics
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid gap-3 p-4 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                            {electronicsCategories.map((category) => (
-                                <ListItem
-                                    key={category.title}
-                                    title={category.title}
-                                    href={category.href}
-                                >
-                                    {category.description}
-                                </ListItem>
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                    {/* Electronics */}
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger className="hover:text-primary data-[state=open]:text-primary transition-colors">
+                            <Smartphone className="mr-2 h-4 w-4" />
+                            Electronics
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <ul className="grid gap-3 p-4 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                                {electronicsCategories.map((category) => (
+                                    <ListItem
+                                        key={category.title}
+                                        title={category.title}
+                                        href={category.href}
+                                    >
+                                        {category.description}
+                                    </ListItem>
+                                ))}
+                            </ul>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
 
-                {/* Home & Living */}
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger className="hover:text-red-400 data-[state=open]:text-red-500 transition-colors">
-                        <LuHouse className="mr-2 h-4 w-4" />
-                        Home & Living
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid gap-3 p-4 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                            {homeCategories.map((category) => (
-                                <ListItem
-                                    key={category.title}
-                                    title={category.title}
-                                    href={category.href}
-                                >
-                                    {category.description}
-                                </ListItem>
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                    {/* Home & Living */}
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger className="hover:text-primary data-[state=open]:text-primary transition-colors">
+                            <LuHouse className="mr-2 h-4 w-4" />
+                            Home & Living
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <ul className="grid gap-3 p-4 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                                {homeCategories.map((category) => (
+                                    <ListItem
+                                        key={category.title}
+                                        title={category.title}
+                                        href={category.href}
+                                    >
+                                        {category.description}
+                                    </ListItem>
+                                ))}
+                            </ul>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
 
-                {/* Sports & Outdoors */}
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger className="hover:text-red-400 data-[state=open]:text-red-500 transition-colors">
-                        <Dumbbell className="mr-2 h-4 w-4" />
-                        Sports
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid gap-3 p-4 w-[300px] ">
-                            {sportsCategories.map((category) => (
-                                <ListItem
-                                    key={category.title}
-                                    title={category.title}
-                                    href={category.href}
-                                >
-                                    {category.description}
-                                </ListItem>
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                    {/* Sports & Outdoors */}
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger className="hover:text-primary data-[state=open]:text-primary transition-colors">
+                            <Dumbbell className="mr-2 h-4 w-4" />
+                            Sports
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <ul className="grid gap-3 p-4 w-[300px] ">
+                                {sportsCategories.map((category) => (
+                                    <ListItem
+                                        key={category.title}
+                                        title={category.title}
+                                        href={category.href}
+                                    >
+                                        {category.description}
+                                    </ListItem>
+                                ))}
+                            </ul>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
 
-                {/* Sale */}
-                <NavigationMenuItem>
-                    <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                        <Link href="/sale" className="text-red-600 font-semibold">
-                            Sale
-                        </Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
+                    {/* Sale */}
+                    <NavigationMenuItem>
+                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()} >
+                            <Link href="/sale" className="text-destructive font-semibold hover:text-destructive transition-colors">
+                                Sale
+                            </Link>
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
 
-                {/* New Arrivals */}
-                <NavigationMenuItem>
-                    <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                        <Link href="/new-arrivals">
-                            New Arrivals
-                        </Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
-            </NavigationMenuList>
-        </NavigationMenu>
+                    {/* New Arrivals */}
+                    <NavigationMenuItem>
+                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                            <Link href="/new-arrivals" className="hover:text-primary data-[state=open]:text-primary transition-colors">
+                                New Arrivals
+                            </Link>
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
+                </NavigationMenuList>
+            </NavigationMenu>
+        </nav>
     )
 }
 

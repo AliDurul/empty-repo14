@@ -1,44 +1,228 @@
-import Header from '@/components/Header'
-import { HeaderCarousel } from '@/components/HeaderCarousel.tsx'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
-import React from 'react'
+import { PromotionCarausel } from '@/components/PromotionCarausel'
+import Hero from '@/components/Hero'
+import FeatureStrip from '@/components/FeatureStrip'
+import ProductCarausel from '@/components/ProductCarausel'
+// Removed unused Card, Button, Image imports after refactor
+import { LiaShippingFastSolid } from "react-icons/lia";
+import PromotionDiv from '@/components/PromotionDiv';
+import Newsletter from '@/components/Newsletter';
+import Footer from '@/components/Footer';
 
 export default function Home() {
+
+  const popularCategories = [
+    'fashion',
+    'electronics',
+    'bags',
+    'footwear',
+    'groceries',
+    'beauty',
+    'wellness',
+    'jewellery',
+  ]
+
+  const popularProducts = Array.from({ length: 20 }).map((_, index) => ({
+    id: index + 1,
+    name: `pop-Product ${index + 1}`,
+    brand: 'Flying Machine',
+    images: ['/on.jpg', '/arka.jpg'],
+    ratings: 4,
+    price: 1200,
+    discountPrice: 1000,
+  }));
+
+  const latestProducts = Array.from({ length: 20 }).map((_, index) => ({
+    id: index + 1,
+    name: `latest-Product ${index + 1}`,
+    brand: 'watch',
+    images: ['https://serviceapi.spicezgold.com/download/1753712145779_morden-smart-watch-for-kids-men-women-boys-girls-d116-water-proof-touchscreen-smart-watch-bluetooth-1-44-hd-screen-smart-watch-with-daily-activity-tracker-heart-rate-sensor-sleep-monitor-black-product-image.webp', 'https://serviceapi.spicezgold.com/download/1753712150003_morden-smart-watch-for-kids-men-women-boys-girls-d116-water-proof-touchscreen-smart-watch-bluetooth-1-44-hd-screen-smart-watch-with-daily-activity-tracker-heart-rate-sensor-sleep-monitor-black-product-i(1).webp'],
+    ratings: 4,
+    price: 1200,
+    discountPrice: 1000,
+  }));
+
+  const featuredProducts = Array.from({ length: 20 }).map((_, index) => ({
+    id: index + 1,
+    name: `featured-Product ${index + 1}`,
+    brand: 'cotton',
+    images: ['https://serviceapi.spicezgold.com/download/1742463096955_hbhb1.jpg', 'https://serviceapi.spicezgold.com/download/1742463096960_hbhb3.jpg'],
+    ratings: 4,
+    price: 1200,
+    discountPrice: 1000,
+  }));
+
+  const mens = Array.from({ length: 20 }).map((_, index) => ({
+    id: index + 1,
+    name: `mens-Product ${index + 1}`,
+    brand: 'Health',
+    images: ['/on.jpg', '/arka.jpg'],
+    ratings: 4,
+    price: 1200,
+    discountPrice: 1000,
+  }));
+
+
+  const women = Array.from({ length: 20 }).map((_, index) => ({
+    id: index + 1,
+    name: `women-Product ${index + 1}`,
+    brand: 'Shoe',
+    images: ['/on.jpg', '/arka.jpg'],
+    ratings: 4,
+    price: 1200,
+    discountPrice: 1000,
+  }));
+
+
+
+  const tech = Array.from({ length: 20 }).map((_, index) => ({
+    id: index + 1,
+    name: `tech-Product ${index + 1}`,
+    brand: 'Makeup',
+    images: ['/on.jpg', '/arka.jpg'],
+    ratings: 4,
+    price: 1200,
+    discountPrice: 1000,
+  }));
+
+  const promotionsF = [
+    {
+      id: 1,
+      imageSrc: '/promo1.jpg',
+      altText: 'Fashion Deals',
+      title: 'New Season Styles',
+      price: 50,
+      isRight: true,
+      href: '/category/fashion',
+    },
+    {
+      id: 2,
+      imageSrc: '/promo2.jpg',
+      altText: 'Electronics Sale',
+      title: 'Top Tech Picks',
+      price: 299,
+      isRight: true,
+      href: '/category/electronics',
+    },
+    {
+      id: 3,
+      imageSrc: '/promo3.jpg',
+      altText: 'Footwear Offers',
+      title: 'Step Into Comfort',
+      price: 35,
+      isRight: false,
+      href: '/category/footwear',
+    },
+    {
+      id: 4,
+      imageSrc: '/promo4.jpg',
+      altText: 'Beauty Essentials',
+      title: 'Glow-Up Deals',
+      price: 20,
+      isRight: false,
+      href: '/category/beauty',
+    }
+  ];
+
+  const promotionsS = [
+    {
+      id: 1,
+      imageSrc: '/black-friday-promo.jpg',
+      altText: 'Black Friday Sale',
+      title: 'Black Friday Bonanza',
+      price: 50,
+      isRight: true,
+      href: '/category/fashion',
+    },
+    {
+      id: 2,
+      imageSrc: '/fashion-promo.jpg',
+      altText: 'Fashion Sale',
+      title: 'Top Fashion Picks',
+      price: 299,
+      isRight: true,
+      href: '/category/fashion',
+    },
+    {
+      id: 3,
+      imageSrc: '/grocery-promo.jpg',
+      altText: 'Grocery Offers',
+      title: 'Fresh Grocery Deals',
+      price: 35,
+      isRight: false,
+      href: '/category/grocery',
+    },
+    {
+      id: 4,
+      imageSrc: '/new-season-promo.jpg',
+      altText: 'New Season Essentials',
+      title: 'Glow-Up Deals',
+      price: 20,
+      isRight: false,
+      href: '/category/beauty',
+    }
+  ];
   return (
-    <>
-      <div className='bg-[#f5f0f0] p-6 space-y-3 md:space-y-6'>
-        <HeaderCarousel />
-        <div className='relative overflow-hidden rounded-xl bg-linear-to-r from-thistle-600 via-fuchsia-500 to-fuchsia-600 text-white px-6 py-4 sm:px-10 sm:py-6 shadow-lg'>
-          <div className='absolute -top-10 -left-10 h-40 w-40 rounded-full bg-white/10 blur-2xl' />
-          <div className='absolute -bottom-12 -right-12 h-40 w-40 rounded-full bg-white/10 blur-2xl' />
+    <main>
+      <Hero />
+      <div className="space-y-14">
+        <ProductCarausel
+          title="Popular Products"
+          subTitle="Do not miss the current offers until the end of March."
+          categories={popularCategories}
+          products={popularProducts}
+        />
 
-          <div className='relative flex flex-col gap-3 sm:gap-4 md:flex-row md:items-center md:justify-between'>
-            <div>
-              <p className='uppercase tracking-wider text-white/90 text-xs sm:text-sm font-semibold'>Limited Time</p>
-              <h2 className='text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight drop-shadow-sm'>
-                Extra 15% off New Arrivals
-              </h2>
-              <p className='text-white/90 text-sm sm:text-base'>Use code
-                <span className='mx-2 rounded-md bg-white/15 px-2 py-1 font-mono text-[12px] sm:text-sm'>SHOPLY15</span>
-                at checkout. Ends Sunday.
-              </p>
-            </div>
+        <PromotionCarausel />
 
-            <div className='mt-4 md:mt-0 flex items-center gap-3'>
-              <Link href='/new-arrivals'>
-                <Button className='bg-white text-gray-900 hover:bg-white/90'>Shop Now</Button>
-              </Link>
-              <Link href='/sale'>
-                <Button variant='secondary' className='border-white text-black '>View Deals</Button>
-              </Link>
-            </div>
+        {/* <section className='bg-background p-5 max-w-5/6 mx-auto border border-primary/20 rounded-lg flex flex-col md:flex-row justify-around items-center gap-2 shadow-md shadow-primary/10'>
+          <div className='flex justify-center items-center'>
+            <LiaShippingFastSolid className="mr-4 size-8" />
+            <p className='uppercase font-medium '>Free shipping</p>
           </div>
-        </div>
-      </div>
-      <main className='min-h-[9999px] bg-turquoise-200' >
+          <p className='text-muted-foreground'>Free Delivery now On Your First Order and over $200</p>
+          <p className='font-bold'>- Only $200</p>
+        </section> */}
 
-      </main>
-    </>
+        <FeatureStrip />
+
+
+
+        <ProductCarausel
+          title="Latest Products"
+          products={latestProducts}
+        />
+
+        <ProductCarausel
+          title="featured Products"
+          products={featuredProducts}
+        />
+
+        <PromotionDiv type="mid" promotions={promotionsS} />
+
+        <ProductCarausel
+          title="Tech Products"
+          products={tech}
+        />
+
+        <ProductCarausel
+          title="Mens Products"
+          products={mens}
+        />
+
+        <PromotionDiv type="mix" promotions={promotionsF} />
+
+
+        <ProductCarausel
+          title="Women Products"
+          products={women}
+        />
+
+        <Newsletter />
+
+
+
+      </div>
+
+    </main>
   )
 }
