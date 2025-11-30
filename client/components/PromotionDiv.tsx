@@ -6,10 +6,10 @@ import { Button } from './ui/button'
 
 
 
-export default function PromotionDiv({ type, promotions }: { type: 'mix' | 'mid', promotions: unknown[] }) {
+export default function PromotionDiv({ type, promotions }: { type: 'mix' | 'mid', promotions: any[] }) {
     return (
         <section className='px-10 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4'>
-            {promotions.map((promo: unknown) => (
+            {promotions.map((promo: any) => (
                 type === 'mix' ? (
                     <Card key={promo.id} className="group overflow-hidden p-0 border border-primary/10 hover:border-primary/30 transition-colors">
                         <CardContent className="relative h-44 sm:h-52 md:h-56 p-0">

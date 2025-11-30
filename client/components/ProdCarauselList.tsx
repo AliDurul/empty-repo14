@@ -17,17 +17,17 @@ import { useCartActions } from "@/store/cartStore"
 
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function PopProList({products}: {products: any[]}) {
+export default function ProdCarauselList({products}: {products: any[]}) {
     const { addItem } = useCartActions();
     return (
         <Carousel
             className="w-full min-w-0 "
             opts={{ align: 'start', dragFree: true, loop: false }}
         >
-            <CarouselContent className="">
+            <CarouselContent className="py-2">
                 {products.map((product) => (
                     <CarouselItem key={product?.id} className="basis-auto transition-all pl-6">
-                        <Card className="min-w-[260px] max-w-[280px] overflow-hidden py-0 gap-4">
+                        <Card className="min-w-[260px] max-w-[280px] overflow-hidden py-0 gap-4  hover:shadow-xl transition-shadow duration-300">
                             <div className="relative overflow-hidden group">
                                 {/* Discount badge */}
                                 <Badge className="absolute left-3 top-3 z-10" variant="destructive">

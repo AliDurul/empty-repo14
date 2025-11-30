@@ -1,5 +1,5 @@
-import PopProLinks from "./PopProLinks";
-import PopProList from "./PopProList";
+import ProdCarauselLinks from "./ProdCarauselLinks";
+import ProdCarauselList from "./ProdCarauselList";
 
 
 
@@ -20,9 +20,9 @@ export default function ProductCarausel({ title, subTitle, categories, products 
                     <h2 className='text-xl font-semibold capitalize items-start'>{title}</h2>
                     <p className='text-gray-400 text-base/normal'>{subTitle}</p>
                 </div>
-                { categories && <PopProLinks categories={categories} /> }
+                {categories && <ProdCarauselLinks categories={categories} />}
             </div>
-            <PopProList  products={products} />
+            <ProdCarauselList products={products} />
         </section>
     )
 }

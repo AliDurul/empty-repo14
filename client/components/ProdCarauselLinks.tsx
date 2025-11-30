@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 
 
 
-export default function PopProLinks({ categories }: { categories?: string[] }) {
+export default function ProdCarauselLinks({ categories }: { categories?: string[] }) {
     const { updateUrlParams, getParam } = useUrlParams();
     const selectedCategory = getParam('pp', 'fashion');
 

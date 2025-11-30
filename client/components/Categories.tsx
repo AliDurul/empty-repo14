@@ -17,64 +17,64 @@ import {
 } from "@/components/ui/navigation-menu"
 
 const mensCategories = [
-    { title: "T-Shirts & Polos", href: "/men/t-shirts", description: "Casual and formal t-shirts, polo shirts" },
-    { title: "Shirts", href: "/men/shirts", description: "Dress shirts, casual shirts, denim shirts" },
-    { title: "Jeans & Pants", href: "/men/jeans", description: "Slim fit, regular fit, cargo pants" },
-    { title: "Jackets & Coats", href: "/men/jackets", description: "Leather jackets, bomber jackets, winter coats" },
-    { title: "Suits & Blazers", href: "/men/suits", description: "Business suits, casual blazers" },
-    { title: "Shoes", href: "/men/shoes", description: "Sneakers, formal shoes, boots, sandals" },
-    { title: "Accessories", href: "/men/accessories", description: "Belts, wallets, ties, sunglasses" },
-    { title: "Sportswear", href: "/men/sportswear", description: "Gym wear, running gear, athletic shoes" },
+    { title: "T-Shirts & Polos", href: "/products?q=men-tshirts", description: "Casual and formal t-shirts, polo shirts" },
+    { title: "Shirts", href: "/products?q=men-shirts", description: "Dress shirts, casual shirts, denim shirts" },
+    { title: "Jeans & Pants", href: "/products?q=men-jeans", description: "Slim fit, regular fit, cargo pants" },
+    { title: "Jackets & Coats", href: "/products?q=men-jackets", description: "Leather jackets, bomber jackets, winter coats" },
+    { title: "Suits & Blazers", href: "/products?q=men-suits", description: "Business suits, casual blazers" },
+    { title: "Shoes", href: "/products?q=men-shoes", description: "Sneakers, formal shoes, boots, sandals" },
+    { title: "Accessories", href: "/products?q=men-accessories", description: "Belts, wallets, ties, sunglasses" },
+    { title: "Sportswear", href: "/products?q=men-sportswear", description: "Gym wear, running gear, athletic shoes" },
 ]
 
 const womensCategories = [
-    { title: "Dresses", href: "/women/dresses", description: "Casual dresses, evening gowns, summer dresses" },
-    { title: "Tops & Blouses", href: "/women/tops", description: "T-shirts, tank tops, formal blouses" },
-    { title: "Jeans & Pants", href: "/women/jeans", description: "Skinny jeans, wide leg pants, leggings" },
-    { title: "Skirts", href: "/women/skirts", description: "Mini skirts, midi skirts, maxi skirts" },
-    { title: "Jackets & Coats", href: "/women/jackets", description: "Blazers, trench coats, leather jackets" },
-    { title: "Shoes & Heels", href: "/women/shoes", description: "Heels, flats, boots, sandals, sneakers" },
-    { title: "Bags & Handbags", href: "/women/bags", description: "Shoulder bags, clutches, totes, backpacks" },
-    { title: "Jewelry", href: "/women/jewelry", description: "Necklaces, earrings, bracelets, rings" },
+    { title: "Dresses", href: "/products?q=women-dresses", description: "Casual dresses, evening gowns, summer dresses" },
+    { title: "Tops & Blouses", href: "/products?q=women-tops", description: "T-shirts, tank tops, formal blouses" },
+    { title: "Jeans & Pants", href: "/products?q=women-jeans", description: "Skinny jeans, wide leg pants, leggings" },
+    { title: "Skirts", href: "/products?q=women-skirts", description: "Mini skirts, midi skirts, maxi skirts" },
+    { title: "Jackets & Coats", href: "/products?q=women-jackets", description: "Blazers, trench coats, leather jackets" },
+    { title: "Shoes & Heels", href: "/products?q=women-shoes", description: "Heels, flats, boots, sandals, sneakers" },
+    { title: "Bags & Handbags", href: "/products?q=women-bags", description: "Shoulder bags, clutches, totes, backpacks" },
+    { title: "Jewelry", href: "/products?q=women-jewelry", description: "Necklaces, earrings, bracelets, rings" },
 ]
 
 const kidsCategories = [
-    { title: "Boys Clothing", href: "/kids/boys", description: "T-shirts, jeans, jackets for boys (2-16 years)" },
-    { title: "Girls Clothing", href: "/kids/girls", description: "Dresses, tops, pants for girls (2-16 years)" },
-    { title: "Baby & Toddler", href: "/kids/baby", description: "Onesies, rompers, sleepwear (0-2 years)" },
-    { title: "Kids Shoes", href: "/kids/shoes", description: "Sneakers, sandals, boots for all ages" },
-    { title: "School Uniforms", href: "/kids/uniforms", description: "Shirts, pants, skirts, accessories" },
-    { title: "Kids Accessories", href: "/kids/accessories", description: "Bags, hats, socks, belts" },
+    { title: "Boys Clothing", href: "/products?q=kids-boys", description: "T-shirts, jeans, jackets for boys (2-16 years)" },
+    { title: "Girls Clothing", href: "/products?q=kids-girls", description: "Dresses, tops, pants for girls (2-16 years)" },
+    { title: "Baby & Toddler", href: "/products?q=kids-baby", description: "Onesies, rompers, sleepwear (0-2 years)" },
+    { title: "Kids Shoes", href: "/products?q=kids-shoes", description: "Sneakers, sandals, boots for all ages" },
+    { title: "School Uniforms", href: "/products?q=kids-uniforms", description: "Shirts, pants, skirts, accessories" },
+    { title: "Kids Accessories", href: "/products?q=kids-accessories", description: "Bags, hats, socks, belts" },
 ]
 
 const electronicsCategories = [
-    { title: "Smartphones", href: "/electronics/smartphones", description: "Latest smartphones from top brands" },
-    { title: "Laptops & Computers", href: "/electronics/laptops", description: "Gaming laptops, business laptops, desktops" },
-    { title: "Tablets & iPads", href: "/electronics/tablets", description: "Android tablets, iPads, accessories" },
-    { title: "Audio & Headphones", href: "/electronics/audio", description: "Wireless earbuds, headphones, speakers" },
-    { title: "Cameras", href: "/electronics/cameras", description: "DSLR, mirrorless, action cameras" },
-    { title: "Smart Watches", href: "/electronics/smartwatches", description: "Fitness trackers, smartwatches" },
-    { title: "Gaming", href: "/electronics/gaming", description: "Consoles, controllers, gaming accessories" },
-    { title: "TV & Home Theater", href: "/electronics/tv", description: "Smart TVs, soundbars, projectors" },
+    { title: "Smartphones", href: "/products?q=electronics-smartphones", description: "Latest smartphones from top brands" },
+    { title: "Laptops & Computers", href: "/products?q=electronics-laptops", description: "Gaming laptops, business laptops, desktops" },
+    { title: "Tablets & iPads", href: "/products?q=electronics-tablets", description: "Android tablets, iPads, accessories" },
+    { title: "Audio & Headphones", href: "/products?q=electronics-audio", description: "Wireless earbuds, headphones, speakers" },
+    { title: "Cameras", href: "/products?q=electronics-cameras", description: "DSLR, mirrorless, action cameras" },
+    { title: "Smart Watches", href: "/products?q=electronics-smartwatches", description: "Fitness trackers, smartwatches" },
+    { title: "Gaming", href: "/products?q=electronics-gaming", description: "Consoles, controllers, gaming accessories" },
+    { title: "TV & Home Theater", href: "/products?q=electronics-tv", description: "Smart TVs, soundbars, projectors" },
 ]
 
 const homeCategories = [
-    { title: "Furniture", href: "/home/furniture", description: "Sofas, beds, tables, chairs, wardrobes" },
-    { title: "Home Decor", href: "/home/decor", description: "Wall art, mirrors, vases, decorative items" },
-    { title: "Bedding & Bath", href: "/home/bedding", description: "Sheets, towels, comforters, pillows" },
-    { title: "Kitchen & Dining", href: "/home/kitchen", description: "Cookware, dinnerware, utensils, appliances" },
-    { title: "Lighting", href: "/home/lighting", description: "Ceiling lights, lamps, outdoor lighting" },
-    { title: "Storage & Organization", href: "/home/storage", description: "Shelves, baskets, closet organizers" },
-    { title: "Garden & Outdoor", href: "/home/garden", description: "Patio furniture, planters, garden tools" },
+    { title: "Furniture", href: "/products?q=home-furniture", description: "Sofas, beds, tables, chairs, wardrobes" },
+    { title: "Home Decor", href: "/products?q=home-decor", description: "Wall art, mirrors, vases, decorative items" },
+    { title: "Bedding & Bath", href: "/products?q=home-bedding", description: "Sheets, towels, comforters, pillows" },
+    { title: "Kitchen & Dining", href: "/products?q=home-kitchen", description: "Cookware, dinnerware, utensils, appliances" },
+    { title: "Lighting", href: "/products?q=home-lighting", description: "Ceiling lights, lamps, outdoor lighting" },
+    { title: "Storage & Organization", href: "/products?q=home-storage", description: "Shelves, baskets, closet organizers" },
+    { title: "Garden & Outdoor", href: "/products?q=home-garden", description: "Patio furniture, planters, garden tools" },
 ]
 
 const sportsCategories = [
-    { title: "Gym & Fitness", href: "/sports/gym", description: "Weights, yoga mats, resistance bands" },
-    // { title: "Running", href: "/sports/running", description: "Running shoes, activewear, fitness trackers" },
-    { title: "Cycling", href: "/sports/cycling", description: "Bikes, helmets, cycling gear" },
-    // { title: "Swimming", href: "/sports/swimming", description: "Swimwear, goggles, swim accessories" },
-    // { title: "Team Sports", href: "/sports/team", description: "Football, basketball, cricket equipment" },
-    { title: "Outdoor & Camping", href: "/sports/outdoor", description: "Tents, backpacks, hiking gear" },
+    { title: "Gym & Fitness", href: "/products?q=sports-gym", description: "Weights, yoga mats, resistance bands" },
+    { title: "Cycling", href: "/products?q=sports-cycling", description: "Bikes, helmets, cycling gear" },
+    { title: "Outdoor & Camping", href: "/products?q=sports-outdoor", description: "Tents, backpacks, hiking gear" },
+    // { title: "Running", href: "/products?q=sports-running", description: "Running shoes, activewear, fitness trackers" },
+    // { title: "Swimming", href: "/products?q=sports-swimming", description: "Swimwear, goggles, swim accessories" },
+    // { title: "Team Sports", href: "/products?q=sports-team", description: "Football, basketball, cricket equipment" },
 ]
 
 export function Categories() {

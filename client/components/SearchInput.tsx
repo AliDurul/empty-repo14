@@ -6,33 +6,46 @@ import { LuSearch } from "react-icons/lu";
 import { useUrlParams } from "@/hooks/useUrlParams";
 
 export default function SearchInput() {
-    const { updateUrlParams, getParam, hasParam } = useUrlParams();
+    const { updateUrlParams, searchParams } = useUrlParams();
+    const urlQuery = searchParams.get("q") || "";
 
-    // Initialize from URL params to avoid hydration mismatch
-    const [query, setQuery] = useState(() => getParam("q", "") || "");
+    const [query, setQuery] = useState(urlQuery);
 
     useEffect(() => {
-        const delayBounceFn = setTimeout(() => {
-            if (query) {
-                updateUrlParams({ q: query, page: null }, { debounce: 0, replace: true });
-            } else {
-                if (hasParam("q")) {
-                    updateUrlParams({ q: null, page: null }, { debounce: 0, replace: true });
-                }
-            }
-        }, 500);
+        setQuery(urlQuery);
+    }, [urlQuery]);
 
-        return () => clearTimeout(delayBounceFn);
-    }, [query, updateUrlParams, hasParam]);
+    const handleSearch = () => {
+        if (query.trim()) {
+            updateUrlParams({ q: query.trim(), page: null }, { debounce: 0, replace: true });
+        } else {
+            updateUrlParams({ q: null, page: null }, { debounce: 0, replace: true });
+        }
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    };
 
     return (
         <div className='hidden md:flex flex-1 max-w-2xl'>
             <InputGroup>
-                <InputGroupInput onChange={(e) => setQuery(e.target.value)} value={query} placeholder="Search..." />
-                <InputGroupAddon>
+                <InputGroupInput 
+                    onChange={(e) => setQuery(e.target.value)} 
+                    onKeyDown={handleKeyDown}
+                    value={query} 
+                    placeholder="Search..." 
+                />
+                <InputGroupAddon 
+                    onClick={handleSearch}
+                    className="cursor-pointer hover:text-primary transition-colors duration-200 "
+                    aria-label="Search"
+                >
                     <LuSearch />
                 </InputGroupAddon>
-                <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
+                {/* <InputGroupAddon align="inline-end">12 results</InputGroupAddon> */}
             </InputGroup>
         </div>
     )

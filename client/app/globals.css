@@ -29,7 +29,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.92 0.004 286.32);
   --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.712 0.194 13.428);
+  --ring: #67B2D8;
   --chart-1: oklch(0.81 0.117 11.638);
   --chart-2: oklch(0.645 0.246 16.439);
   --chart-3: oklch(0.586 0.253 17.585);
