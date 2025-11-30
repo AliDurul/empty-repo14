@@ -6,7 +6,8 @@ import { Badge } from './ui/badge'
 import SearchInput from './SearchInput'
 import { Categories } from './Categories'
 import { Separator } from './ui/separator'
-import { Basket } from './Basket'
+import { Cart } from './Cart'
+import { Skeleton } from './ui/skeleton'
 
 export default function Header() {
     return (
@@ -59,9 +60,18 @@ export default function Header() {
                                 <Badge variant={'destructive'} className="absolute -top-2 -right-2 h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">
                                     8
                                 </Badge>
+                                {/* {
+                                    isHydrating
+                                        ? <Skeleton className="bg-secondary absolute -top-2 -right-2 size-3 rounded-full px-1 font-mono " />
+                                        : cartItemCount > 0 && (
+                                            <Badge variant={'secondary'} className="absolute -top-2 -right-2 h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">
+                                                {cartItemCount}
+                                            </Badge>
+                                        )
+                                } */}
                             </Link>
 
-                            <Basket />
+                            <Cart />
 
 
                         </div>

@@ -1,3 +1,4 @@
+'use client'
 import {
     Card,
     CardContent,
@@ -11,11 +12,13 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Badge } from "./ui/badge"
 import { Button } from "./ui/button"
 import { LuHeart, LuExpand } from "react-icons/lu";
+import { useCartActions } from "@/store/cartStore"
 
 
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function PopProList({products}: {products: any[]}) {
+    const { addItem } = useCartActions();
     return (
         <Carousel
             className="w-full min-w-0 "
@@ -79,7 +82,18 @@ export default function PopProList({products}: {products: any[]}) {
                                 </div>
                             </CardContent>
                             <CardFooter className="px-4 pb-4">
-                                <Button variant={'primary-outline'} className="w-full hover:bg-primary/80 shadow-md shadow-primary/10 cursor-pointer">
+                                <Button
+                                    variant={'primary-outline'}
+                                    className="w-full hover:bg-primary/80 shadow-md shadow-primary/10 cursor-pointer"
+                                    onClick={() => addItem({
+                                        id: product.id,
+                                        name: product.name,
+                                        price: product.price,
+                                        discountPrice: product.discountPrice,
+                                        image: product.images[0],
+                                        category: product.brand,
+                                    })}
+                                >
                                     <span className="inline-flex items-center gap-2">
                                         <svg viewBox="0 0 24 24" className="size-4"><path fill="currentColor" d="M7 22q-.825 0-1.413-.587T5 20q0-.825.588-1.413T7 18q.825 0 1.413.588T9 20q0 .825-.587 1.413T7 22Zm10 0q-.825 0-1.413-.587T15 20q0-.825.588-1.413T17 18q.825 0 1.413.588T19 20q0 .825-.587 1.413T17 22ZM6.15 6l3.05 6h7.1l2.75-6H6.15Zm-1.6-2h15.5q.6 0 .912.488t.063.987l-3.85 8.4q-.25.55-.75.888T15.85 15H8.3l-1.1 2h11.8v2H7.1q-.725 0-1.113-.612T5.7 17.8l1.6-2.9L3 4H1V2h3q.375 0 .7.2t.45.55L6.5 6Z" /></svg>
                                         ADD TO CART

@@ -1,13 +1,10 @@
 import { PromotionCarausel } from '@/components/PromotionCarausel'
 import Hero from '@/components/Hero'
 import FeatureStrip from '@/components/FeatureStrip'
-import { CartProvider } from '@/components/cart/CartContext'
 import ProductCarausel from '@/components/ProductCarausel'
-// Removed unused Card, Button, Image imports after refactor
 import { LiaShippingFastSolid } from "react-icons/lia";
 import PromotionDiv from '@/components/PromotionDiv';
 import Newsletter from '@/components/Newsletter';
-import Footer from '@/components/Footer';
 
 export default function Home() {
 
@@ -163,7 +160,6 @@ export default function Home() {
     }
   ];
   return (
-    <CartProvider>
     <main className="space-y-14 ">
       <Hero />
 
@@ -222,7 +218,5 @@ export default function Home() {
 
 
     </main>
-    </CartProvider>
-
   )
 }
